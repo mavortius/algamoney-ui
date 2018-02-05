@@ -8,7 +8,18 @@ import {Component, OnInit} from '@angular/core';
 export class LancamentoCadastroComponent implements OnInit {
   tipos = [
     {label: 'Receita', value: 'RECEITA'},
-    {label: 'Despesa', value: 'DESPESA'},
+    {label: 'Despesa', value: 'DESPESA'}
+  ];
+
+  categorias = [
+    {label: 'Alimentaçao', value: '1'},
+    {label: 'Transporte', value: '2'}
+  ];
+
+  pessoas = [
+    {label: 'Joao da Silva', value: '1'},
+    {label: 'Sebastiao Souza', value: '2'},
+    {label: 'Maria Abadia', value: '3'}
   ];
 
   constructor() {
