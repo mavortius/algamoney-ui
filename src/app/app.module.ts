@@ -18,6 +18,7 @@ import {LancamentosPesquisaComponent} from './lancamentos-pesquisa/lancamentos-p
 import {NavbarComponent} from './navbar/navbar.component';
 import {PessoasPesquisaComponent} from './pessoas-pesquisa/pessoas-pesquisa.component';
 import {LancamentoCadastroComponent} from './lancamento-cadastro/lancamento-cadastro.component';
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {LancamentoCadastroComponent} from './lancamento-cadastro/lancamento-cada
     LancamentosPesquisaComponent,
     NavbarComponent,
     PessoasPesquisaComponent,
-    LancamentoCadastroComponent
+    LancamentoCadastroComponent,
+    PessoaCadastroComponent
   ],
   imports: [
     BrowserModule,
