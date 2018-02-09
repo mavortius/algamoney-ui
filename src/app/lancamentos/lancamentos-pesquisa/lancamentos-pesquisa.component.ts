@@ -7,6 +7,8 @@ import {LancamentoService} from '../lancamento.service';
   styleUrls: ['./lancamentos-pesquisa.component.css']
 })
 export class LancamentosPesquisaComponent implements OnInit {
+
+  descricao: string;
   lancamentos = [];
 
   constructor(private lancamentoService: LancamentoService) {
@@ -17,7 +19,7 @@ export class LancamentosPesquisaComponent implements OnInit {
   }
 
   pesquisar() {
-    this.lancamentoService.pesquisar()
+    this.lancamentoService.pesquisar({descricao: this.descricao})
       .then(lancamentos => this.lancamentos = lancamentos);
   }
 
