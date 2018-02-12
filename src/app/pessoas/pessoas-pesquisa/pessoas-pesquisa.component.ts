@@ -5,6 +5,7 @@ import {ToastyService} from 'ng2-toasty';
 
 import {PessoaFiltro, PessoaService} from '../pessoa.service';
 import {ErrorHandlerService} from '../../core/error-handler.service';
+import {errorHandler} from "@angular/platform-browser/src/browser";
 
 @Component({
   selector: 'app-pessoas-pesquisa',
@@ -59,6 +60,19 @@ export class PessoasPesquisaComponent {
         }
 
         this.toasty.success('Pessoa excluída com sucessso');
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  alternarStatus(pessoa: any): void {
+    const novoStatus = !pessoa.ativo;
+
+    this.pessoaService.mudarStatus(pessoa.codigo, novoStatus)
+      .then(() => {
+        const acao = novoStatus ? 'ativada' : 'desativada';
+        pessoa.ativo = novoStatus;
+
+        this.toasty.success(`Pessoa ${acao} com sucesso!`);
       })
       .catch(erro => this.errorHandler.handle(erro));
   }
