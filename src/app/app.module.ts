@@ -1,7 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
+import {registerLocaleData} from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 import {ToastyModule} from 'ng2-toasty';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
@@ -14,6 +16,7 @@ import {CoreModule} from './core/core.module';
 import {LancamentoService} from './lancamentos/lancamento.service';
 import {PessoaService} from './pessoas/pessoa.service';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {PessoaService} from './pessoas/pessoa.service';
   providers: [
     LancamentoService,
     PessoaService,
-    ConfirmationService
+    ConfirmationService,
+    { provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]
 })
