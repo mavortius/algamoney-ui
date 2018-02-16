@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {registerLocaleData} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import localePt from '@angular/common/locales/pt';
+import {Title} from '@angular/platform-browser';
 
 import {ToastyModule} from 'ng2-toasty';
 import {ConfirmDialogModule} from 'primeng/primeng';
@@ -13,7 +14,7 @@ import {ErrorHandlerService} from './error-handler.service';
 import {LancamentoService} from '../lancamentos/lancamento.service';
 import {PessoaService} from '../pessoas/pessoa.service';
 import {CategoriaService} from '../categorias/categoria.service';
-import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
 
 registerLocaleData(localePt);
 
@@ -38,6 +39,7 @@ registerLocaleData(localePt);
     CategoriaService,
     ErrorHandlerService,
     ConfirmationService,
+    Title,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ]
 })
