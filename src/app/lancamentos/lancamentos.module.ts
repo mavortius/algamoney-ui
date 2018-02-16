@@ -16,6 +16,7 @@ import {CurrencyMaskModule} from 'ng2-currency-mask';
 import {LancamentoCadastroComponent} from './lancamento-cadastro/lancamento-cadastro.component';
 import {LancamentosPesquisaComponent} from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import {SharedModule} from '../shared/shared.module';
+import {CoreModule} from '../core/core.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {SharedModule} from '../shared/shared.module';
     SelectButtonModule,
     DropdownModule,
     CurrencyMaskModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   declarations: [
     LancamentoCadastroComponent,
