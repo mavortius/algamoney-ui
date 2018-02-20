@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import localePt from '@angular/common/locales/pt';
 import {Title} from '@angular/platform-browser';
 
+import {JwtHelper} from 'angular2-jwt';
 import {ToastyModule} from 'ng2-toasty';
 import {ConfirmDialogModule} from 'primeng/primeng';
 import {ConfirmationService} from 'primeng/api';
@@ -42,6 +43,7 @@ registerLocaleData(localePt);
     AuthService,
 
     ConfirmationService,
+    JwtHelper,
     Title,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ]
