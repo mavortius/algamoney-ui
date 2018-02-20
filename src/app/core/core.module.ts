@@ -15,6 +15,7 @@ import {LancamentoService} from '../lancamentos/lancamento.service';
 import {PessoaService} from '../pessoas/pessoa.service';
 import {CategoriaService} from '../categorias/categoria.service';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
+import {AuthService} from '../seguranca/auth.service';
 
 registerLocaleData(localePt);
 
@@ -38,6 +39,8 @@ registerLocaleData(localePt);
     PessoaService,
     CategoriaService,
     ErrorHandlerService,
+    AuthService,
+
     ConfirmationService,
     Title,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
