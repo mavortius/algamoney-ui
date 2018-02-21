@@ -77,4 +77,10 @@ export class AuthService {
       this.armazenarToken(token);
     }
   }
+
+  isAccessTokenInvalido() {
+    const token = localStorage.getItem('token');
+
+    return !token || this.jwtHelper.isTokenExpired(token);
+  }
 }
