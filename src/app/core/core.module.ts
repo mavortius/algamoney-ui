@@ -17,6 +17,7 @@ import {PessoaService} from '../pessoas/pessoa.service';
 import {CategoriaService} from '../categorias/categoria.service';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
 import {AuthService} from '../seguranca/auth.service';
+import { NaoAutorizadoComponent } from './nao-autorizado.component';
 
 registerLocaleData(localePt);
 
@@ -28,7 +29,7 @@ registerLocaleData(localePt);
     ToastyModule.forRoot(),
     ConfirmDialogModule,
   ],
-  declarations: [NavbarComponent, PaginaNaoEncontradaComponent],
+  declarations: [NavbarComponent, PaginaNaoEncontradaComponent, NaoAutorizadoComponent],
   exports: [
     NavbarComponent,
     ToastyModule,
