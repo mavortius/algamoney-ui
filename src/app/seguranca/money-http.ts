@@ -6,15 +6,15 @@ import {Observable} from 'rxjs/Observable';
 
 import {AuthService} from './auth.service';
 
+export class NotAuthenticatedError {
+}
 
 @Injectable()
 export class MoneyHttp extends AuthHttp {
 
-  constructor(
-    private auth: AuthService,
-    options: AuthConfig,
-    http: Http, defOpts?: RequestOptions
-  ) {
+  constructor(private auth: AuthService,
+              options: AuthConfig,
+              http: Http, defOpts?: RequestOptions) {
     super(options, http, defOpts);
   }
 
@@ -52,7 +52,11 @@ export class MoneyHttp extends AuthHttp {
 
       const chamadaNovoAccessToken = this.auth.obterNovoAccessToken()
         .then(() => {
-        return fn().toPromise();
+          if (this.auth.isAccessTokenInvalido()) {
+            throw new NotAuthenticatedError();
+          }
+
+          return fn().toPromise();
         });
 
       return Observable.fromPromise(chamadaNovoAccessToken);
