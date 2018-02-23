@@ -12,7 +12,9 @@ import {ErrorHandlerService} from '../error-handler.service';
 })
 export class NavbarComponent {
 
-  constructor(private auth: AuthService,
+  exibindoMenu = false;
+
+  constructor(public auth: AuthService,
               private logoutService: LogoutService,
               private errorHandler: ErrorHandlerService,
               private router: Router) {
