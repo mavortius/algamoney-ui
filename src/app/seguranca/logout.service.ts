@@ -3,11 +3,12 @@ import {Injectable} from '@angular/core';
 import {AuthHttp} from 'angular2-jwt';
 
 import {AuthService} from './auth.service';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class LogoutService {
 
-  tokensRevokeUrl = 'http://localhost:8080/tokens/revoke';
+  tokensRevokeUrl = `${environment.apiUrl}/tokens/revoke`;
 
   constructor(private http: AuthHttp,
               private auth: AuthService) {

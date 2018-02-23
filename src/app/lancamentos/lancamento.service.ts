@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import {AuthHttp} from 'angular2-jwt';
 
 import {Lancamento} from '../core/model';
+import {environment} from '../../environments/environment';
 
 export class LancamentoFiltro {
   descricao: string;
@@ -17,7 +18,7 @@ export class LancamentoFiltro {
 @Injectable()
 export class LancamentoService {
 
-  lancamentosUrl = 'http://localhost:8080/lancamentos';
+  lancamentosUrl = `${environment.apiUrl}/lancamentos`;
 
   constructor(private http: AuthHttp) {
   }
