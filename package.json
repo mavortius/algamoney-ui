@@ -28,7 +28,7 @@
     "ng2-currency-mask": "^4.4.1",
     "ng2-toasty": "^4.0.3",
     "font-awesome": "^4.7.0",
-    "primeng": "^5.2.0",
+    "primeng": "^5.2.3",
     "angular2-jwt": "^0.2.3"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ import {Title} from '@angular/platform-browser';
 
 import {JwtHelper} from 'angular2-jwt';
 import {ToastyModule} from 'ng2-toasty';
-import {ConfirmDialogModule} from 'primeng/primeng';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 
 import {NavbarComponent} from './navbar/navbar.component';
