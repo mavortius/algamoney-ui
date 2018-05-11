@@ -17,7 +17,7 @@ import {PessoaService} from '../pessoas/pessoa.service';
 import {CategoriaService} from '../categorias/categoria.service';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
 import {AuthService} from '../seguranca/auth.service';
-import { NaoAutorizadoComponent } from './nao-autorizado.component';
+import {NaoAutorizadoComponent} from './nao-autorizado.component';
 
 registerLocaleData(localePt);
 
@@ -46,7 +46,7 @@ registerLocaleData(localePt);
     ConfirmationService,
     JwtHelper,
     Title,
-    {provide: LOCALE_ID, useValue: 'pt-BR'}
+    {provide: LOCALE_ID, useValue: 'pt'}
   ]
 })
 export class CoreModule {
