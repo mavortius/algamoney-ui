@@ -10,13 +10,14 @@ import {ToastyModule} from 'ng2-toasty';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 
-import {NavbarComponent} from './navbar/navbar.component';
 import {ErrorHandlerService} from './error-handler.service';
 import {LancamentoService} from '../lancamentos/lancamento.service';
 import {PessoaService} from '../pessoas/pessoa.service';
 import {CategoriaService} from '../categorias/categoria.service';
-import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
+import {DashboardService} from '../dashboard/dashboard.service';
+import {NavbarComponent} from './navbar/navbar.component';
 import {AuthService} from '../seguranca/auth.service';
+import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
 import {NaoAutorizadoComponent} from './nao-autorizado.component';
 
 registerLocaleData(localePt);
@@ -29,7 +30,11 @@ registerLocaleData(localePt);
     ToastyModule.forRoot(),
     ConfirmDialogModule,
   ],
-  declarations: [NavbarComponent, PaginaNaoEncontradaComponent, NaoAutorizadoComponent],
+  declarations: [
+    NavbarComponent,
+    PaginaNaoEncontradaComponent,
+    NaoAutorizadoComponent
+  ],
   exports: [
     NavbarComponent,
     ToastyModule,
@@ -40,6 +45,7 @@ registerLocaleData(localePt);
     LancamentoService,
     PessoaService,
     CategoriaService,
+    DashboardService,
     ErrorHandlerService,
     AuthService,
 
