@@ -5,8 +5,10 @@ import {FormsModule} from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {DataTableModule} from 'primeng/datatable';
+import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import {InputMaskModule} from 'primeng/inputmask';
+import {PanelModule} from 'primeng/panel';
 
 import {PessoaCadastroComponent} from './pessoa-cadastro/pessoa-cadastro.component';
 import {PessoasPesquisaComponent} from './pessoas-pesquisa/pessoas-pesquisa.component';
@@ -20,8 +22,10 @@ import {PessoasRoutingModule} from './pessoas-routing.module';
     InputTextModule,
     ButtonModule,
     DataTableModule,
+    TableModule,
     TooltipModule,
     InputMaskModule,
+    PanelModule,
 
     SharedModule,
     PessoasRoutingModule
