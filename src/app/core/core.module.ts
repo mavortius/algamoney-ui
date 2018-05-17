@@ -19,6 +19,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {AuthService} from '../seguranca/auth.service';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
 import {NaoAutorizadoComponent} from './nao-autorizado.component';
+import {RelatoriosService} from '../relatorios/relatorios.service';
 
 registerLocaleData(localePt);
 
@@ -46,6 +47,7 @@ registerLocaleData(localePt);
     PessoaService,
     CategoriaService,
     DashboardService,
+    RelatoriosService,
     ErrorHandlerService,
     AuthService,
 
