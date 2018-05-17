@@ -10,6 +10,7 @@ import {CoreModule} from './core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {SegurancaModule} from './seguranca/seguranca.module';
 import {DashboardModule} from "./dashboard/dashboard.module";
+import {RelatoriosModule} from "./relatorios/relatorios.module";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {DashboardModule} from "./dashboard/dashboard.module";
     LancamentosModule,
     PessoasModule,
     DashboardModule,
+    RelatoriosModule,
     SegurancaModule,
     AppRoutingModule
   ],
