@@ -9,6 +9,7 @@ import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import {InputMaskModule} from 'primeng/inputmask';
 import {PanelModule} from 'primeng/panel';
+import {DialogModule} from 'primeng/dialog';
 
 import {PessoaCadastroComponent} from './pessoa-cadastro/pessoa-cadastro.component';
 import {PessoasPesquisaComponent} from './pessoas-pesquisa/pessoas-pesquisa.component';
@@ -26,6 +27,7 @@ import {PessoasRoutingModule} from './pessoas-routing.module';
     TooltipModule,
     InputMaskModule,
     PanelModule,
+    DialogModule,
 
     SharedModule,
     PessoasRoutingModule
