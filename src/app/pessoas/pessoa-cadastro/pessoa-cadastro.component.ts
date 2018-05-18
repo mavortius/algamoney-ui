@@ -96,4 +96,17 @@ export class PessoaCadastroComponent implements OnInit {
     this.exibindoFormularioContato = true;
     this.contato = new Contato();
   }
+
+  confirmarContato(frm: FormControl) {
+    this.pessoa.contatos.push(this.clonarContato(this.contato));
+
+    this.exibindoFormularioContato = false;
+
+    frm.reset();
+  }
+
+  private clonarContato(contato: Contato): Contato {
+    return new Contato(contato.codigo,
+      contato.nome, contato.email, contato.telefone);
+  }
 }
