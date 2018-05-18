@@ -5,7 +5,7 @@ import {Title} from '@angular/platform-browser';
 
 import {ToastyService} from 'ng2-toasty';
 
-import {Contato, Pessoa} from '../../core/model';
+import {Pessoa} from '../../core/model';
 import {PessoaService} from '../pessoa.service';
 import {ErrorHandlerService} from '../../core/error-handler.service';
 
@@ -17,9 +17,7 @@ import {ErrorHandlerService} from '../../core/error-handler.service';
 export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
-  exibindoFormularioContato = false;
-  contato: Contato;
-  contatoIndex: number;
+
 
   constructor(private pessoaService: PessoaService,
               private toasty: ToastyService,
@@ -93,31 +91,5 @@ export class PessoaCadastroComponent implements OnInit {
     this.title.setTitle(`Edição de pessoa: ${this.pessoa.nome}`);
   }
 
-  prepararNovoContato() {
-    this.exibindoFormularioContato = true;
-    this.contato = new Contato();
-    this.contatoIndex = this.pessoa.contatos.length;
-  }
 
-  prepararEdicaoContato(contato: Contato, index: number) {
-    this.contato = this.clonarContato(contato);
-    this.exibindoFormularioContato = true;
-    this.contatoIndex = index;
-  }
-
-  confirmarContato(frm: FormControl) {
-    this.pessoa.contatos[this.contatoIndex] = this.clonarContato(this.contato);
-    this.exibindoFormularioContato = false;
-
-    frm.reset();
-  }
-
-  removerContato(index: number) {
-    this.pessoa.contatos.splice(index, 1);
-  }
-
-  private clonarContato(contato: Contato): Contato {
-    return new Contato(contato.codigo,
-      contato.nome, contato.email, contato.telefone);
-  }
 }
