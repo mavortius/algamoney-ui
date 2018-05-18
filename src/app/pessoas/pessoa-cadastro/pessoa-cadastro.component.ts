@@ -5,7 +5,7 @@ import {Title} from '@angular/platform-browser';
 
 import {ToastyService} from 'ng2-toasty';
 
-import {Pessoa} from '../../core/model';
+import {Contato, Pessoa} from '../../core/model';
 import {PessoaService} from '../pessoa.service';
 import {ErrorHandlerService} from '../../core/error-handler.service';
 
@@ -18,6 +18,7 @@ export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
   exibindoFormularioContato = false;
+  contato: Contato;
 
   constructor(private pessoaService: PessoaService,
               private toasty: ToastyService,
@@ -93,5 +94,6 @@ export class PessoaCadastroComponent implements OnInit {
 
   prepararNovoContato() {
     this.exibindoFormularioContato = true;
+    this.contato = new Contato();
   }
 }
