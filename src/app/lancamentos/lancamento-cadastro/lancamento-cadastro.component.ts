@@ -140,6 +140,10 @@ export class LancamentoCadastroComponent implements OnInit {
     });
   }
 
+  erroUpload(event) {
+    this.toasty.error('Erro ao tentar enviar anexo!');
+  }
+
   get urlUploadAnexo() {
     return this.lancamentoService.urlUploadAnexo();
   }
