@@ -37,12 +37,10 @@ export class PessoaService {
       .then(response => {
         const responseJson = response.json();
         const pessoas = responseJson.content;
-        const resultado = {
+        return {
           pessoas,
           total: responseJson.totalElements
         };
-
-        return resultado;
       });
   }
 

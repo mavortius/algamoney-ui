@@ -17,7 +17,7 @@ import {ErrorHandlerService} from '../../core/error-handler.service';
 export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
-
+  estados: Array<any>;
 
   constructor(private pessoaService: PessoaService,
               private toasty: ToastyService,
@@ -31,6 +31,7 @@ export class PessoaCadastroComponent implements OnInit {
     const codigoPessoa = this.route.snapshot.params['codigo'];
 
     this.title.setTitle('Nova pessoa');
+    this.carregarEstados();
 
     if (codigoPessoa) {
       this.carregarPessoa(codigoPessoa);
@@ -91,5 +92,10 @@ export class PessoaCadastroComponent implements OnInit {
     this.title.setTitle(`Edição de pessoa: ${this.pessoa.nome}`);
   }
 
-
+  carregarEstados() {
+    this.pessoaService.listarEstados().then(estados => {
+      this.estados = estados.map(e => ({ label: e.nome, value: e.codigo }));
+    })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
 }
