@@ -127,6 +127,14 @@ export class LancamentoCadastroComponent implements OnInit {
     this.title.setTitle(`Edição de lançamento: ${this.formulario.get('descricao').value}`);
   }
 
+  antesUploadAnexo(event) {
+    event.xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token')}`);
+  }
+
+  get urlUploadAnexo() {
+    return this.lancamentoService.urlUploadAnexo();
+  }
+
   private configurarFormulario() {
     this.formulario = this.fb.group({
       codigo: [],
