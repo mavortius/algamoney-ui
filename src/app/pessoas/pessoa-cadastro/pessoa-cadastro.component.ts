@@ -17,7 +17,9 @@ import {ErrorHandlerService} from '../../core/error-handler.service';
 export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
-  estados: Array<any>;
+  estados: any[];
+  cidades: any[];
+  estadoSelecionado: number;
 
   constructor(private pessoaService: PessoaService,
               private toasty: ToastyService,
@@ -95,6 +97,13 @@ export class PessoaCadastroComponent implements OnInit {
   carregarEstados() {
     this.pessoaService.listarEstados().then(estados => {
       this.estados = estados.map(e => ({ label: e.nome, value: e.codigo }));
+    })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  carregarCidades() {
+    this.pessoaService.pesquisarCidades(this.estadoSelecionado).then(cidades => {
+      this.cidades = cidades.map(c => ({ label: c.nome, value: c.codigo }));
     })
       .catch(erro => this.errorHandler.handle(erro));
   }
