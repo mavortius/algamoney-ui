@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
-import {DataTableModule} from 'primeng/datatable';
 import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import {InputMaskModule} from 'primeng/inputmask';
@@ -24,7 +23,6 @@ import {PessoaCadastroContatoComponent} from './pessoa-cadastro-contato/pessoa-c
     FormsModule,
     InputTextModule,
     ButtonModule,
-    DataTableModule,
     TableModule,
     TooltipModule,
     InputMaskModule,
