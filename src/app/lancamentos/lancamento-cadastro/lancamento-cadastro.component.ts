@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
 
-import {ToastyService} from 'ng2-toasty';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 import {ErrorHandlerService} from '../../core/error-handler.service';
 import {CategoriaService} from '../../categorias/categoria.service';
@@ -31,7 +31,7 @@ export class LancamentoCadastroComponent implements OnInit {
   constructor(private categoriaService: CategoriaService,
               private pessoaService: PessoaService,
               private lancamentoService: LancamentoService,
-              private toasty: ToastyService,
+              private messageService: MessageService,
               private errorHandler: ErrorHandlerService,
               private route: ActivatedRoute,
               private router: Router,
@@ -79,7 +79,7 @@ export class LancamentoCadastroComponent implements OnInit {
   adicionarLancamento() {
     this.lancamentoService.adicionar(this.formulario.value)
       .then(lancamentoAdicionado => {
-        this.toasty.success('Lançamento adicionado com sucesso!');
+        this.messageService.add({severity: 'success', detail: 'Lançamento adicionado com sucesso!'});
 
         this.router.navigate(['/lancamentos', lancamentoAdicionado.codigo]);
       })
@@ -91,8 +91,7 @@ export class LancamentoCadastroComponent implements OnInit {
       .then(lancamento => {
         // this.lancamento = lancamento;
         this.formulario.patchValue(lancamento);
-
-        this.toasty.success('Lançamento alterado com sucesso!');
+        this.messageService.add({severity: 'success', detail: 'Lançamento alterado com sucesso!'});
         this.atualizarTituloEdicao();
       })
       .catch(erro => this.errorHandler.handle(erro));
@@ -145,7 +144,7 @@ export class LancamentoCadastroComponent implements OnInit {
   }
 
   erroUpload(event) {
-    this.toasty.error('Erro ao tentar enviar anexo!');
+    this.messageService.add({severity: 'error', detail: 'Erro ao tentar enviar anexo!'});
     this.uploadEmAndamento = false;
   }
 
