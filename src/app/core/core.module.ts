@@ -4,8 +4,9 @@ import {registerLocaleData} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import localePt from '@angular/common/locales/pt';
 import {Title} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
-import {JwtHelper} from 'angular2-jwt';
+import {JwtHelperService} from '@auth0/angular-jwt';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import {GrowlModule} from 'primeng/growl';
@@ -21,12 +22,14 @@ import {AuthService} from '../seguranca/auth.service';
 import {PaginaNaoEncontradaComponent} from './pagina-nao-encontrada.component';
 import {NaoAutorizadoComponent} from './nao-autorizado.component';
 import {RelatoriosService} from '../relatorios/relatorios.service';
+import {MoneyHttp} from '../seguranca/money-http';
 
 registerLocaleData(localePt);
 
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule,
 
     GrowlModule,
@@ -51,10 +54,11 @@ registerLocaleData(localePt);
     RelatoriosService,
     ErrorHandlerService,
     AuthService,
+    MoneyHttp,
 
     ConfirmationService,
     MessageService,
-    JwtHelper,
+    JwtHelperService,
     Title,
     {provide: LOCALE_ID, useValue: 'pt'}
   ]
